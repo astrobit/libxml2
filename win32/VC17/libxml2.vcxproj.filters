@@ -111,9 +111,6 @@
     <ClInclude Include="..\..\include\libxml\xmlerror.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\include\libxml\xmlexports.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="..\..\include\libxml\xmlIO.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -160,6 +157,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\include\libxml\xmlversion.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\libxml\xmlexports.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -299,9 +299,5 @@
     <ClCompile Include="..\..\xzlib.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\include\libxml\xmlversion.h.in" />
-    <None Include="..\..\include\libxml\xmlwin32version.h.in" />
   </ItemGroup>
 </Project>

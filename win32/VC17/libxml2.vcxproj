@@ -260,10 +260,6 @@
     <ClCompile Include="..\..\xzlib.c" />
     <ClCompile Include="dllmain.cpp" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\include\libxml\xmlversion.h.in" />
-    <None Include="..\..\include\libxml\xmlwin32version.h.in" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
