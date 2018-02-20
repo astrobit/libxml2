@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2027
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libxml2", "libxml2.vcxproj", "{90B8740F-67F9-4434-AA47-546A7DAF085A}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "libxml2-installer-64", "..\libxml2-installer-64\libxml2-installer-64.vdproj", "{D65B8D26-9EF7-4646-9DCD-8425E903F3F5}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "libxml2-dev-installer-64", "libxml2-dev-installer-64\libxml2-dev-installer-64.vdproj", "{9AE02380-2D42-44D4-BE02-B4E0E53023C2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{90B8740F-67F9-4434-AA47-546A7DAF085A}.Debug|x64.ActiveCfg = Debug|x64
+		{90B8740F-67F9-4434-AA47-546A7DAF085A}.Debug|x64.Build.0 = Debug|x64
+		{90B8740F-67F9-4434-AA47-546A7DAF085A}.Debug|x86.ActiveCfg = Debug|Win32
+		{90B8740F-67F9-4434-AA47-546A7DAF085A}.Debug|x86.Build.0 = Debug|Win32
+		{90B8740F-67F9-4434-AA47-546A7DAF085A}.Release|x64.ActiveCfg = Release|x64
+		{90B8740F-67F9-4434-AA47-546A7DAF085A}.Release|x64.Build.0 = Release|x64
+		{90B8740F-67F9-4434-AA47-546A7DAF085A}.Release|x86.ActiveCfg = Release|Win32
+		{90B8740F-67F9-4434-AA47-546A7DAF085A}.Release|x86.Build.0 = Release|Win32
+		{D65B8D26-9EF7-4646-9DCD-8425E903F3F5}.Debug|x64.ActiveCfg = Debug
+		{D65B8D26-9EF7-4646-9DCD-8425E903F3F5}.Debug|x86.ActiveCfg = Debug
+		{D65B8D26-9EF7-4646-9DCD-8425E903F3F5}.Release|x64.ActiveCfg = Release
+		{D65B8D26-9EF7-4646-9DCD-8425E903F3F5}.Release|x64.Build.0 = Release
+		{D65B8D26-9EF7-4646-9DCD-8425E903F3F5}.Release|x86.ActiveCfg = Release
+		{9AE02380-2D42-44D4-BE02-B4E0E53023C2}.Debug|x64.ActiveCfg = Debug
+		{9AE02380-2D42-44D4-BE02-B4E0E53023C2}.Debug|x86.ActiveCfg = Debug
+		{9AE02380-2D42-44D4-BE02-B4E0E53023C2}.Release|x64.ActiveCfg = Release
+		{9AE02380-2D42-44D4-BE02-B4E0E53023C2}.Release|x64.Build.0 = Release
+		{9AE02380-2D42-44D4-BE02-B4E0E53023C2}.Release|x86.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {119721F4-D67F-4B62-98E8-338D31BE882E}
+	EndGlobalSection
+EndGlobal

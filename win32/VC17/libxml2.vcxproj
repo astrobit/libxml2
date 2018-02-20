@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{90B8740F-67F9-4434-AA47-546A7DAF085A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>libxml2</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)-$(Platform)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <TargetName>$(ProjectName)-$(Platform)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)-$(Platform)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <TargetName>$(ProjectName)-$(Platform)</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;_DEBUG;LIBXML2_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Programming\libxml2\include;C:\Programming\libxml2\win32;C:\Programming\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>C:\Programming\include\win-iconv-x86.lib;wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;_DEBUG;LIBXML2_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Programming\libxml2\include;C:\Programming\libxml2\win32;C:\Programming\include;</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>C:\Programming\include\win-iconv-x64.lib;wsock32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;NDEBUG;LIBXML2_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Programming\libxml2\include;C:\Programming\libxml2\win32;C:\Programming\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>C:\Programming\include\win-iconv-x86.lib;wsock32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;NDEBUG;LIBXML2_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\Programming\libxml2\include;C:\Programming\libxml2\win32;C:\Programming\include;</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>C:\Programming\include\win-iconv-x64.lib;wsock32.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\libxml\c14n.h" />
+    <ClInclude Include="..\..\include\libxml\catalog.h" />
+    <ClInclude Include="..\..\include\libxml\chvalid.h" />
+    <ClInclude Include="..\..\include\libxml\debugXML.h" />
+    <ClInclude Include="..\..\include\libxml\dict.h" />
+    <ClInclude Include="..\..\include\libxml\DOCBparser.h" />
+    <ClInclude Include="..\..\include\libxml\encoding.h" />
+    <ClInclude Include="..\..\include\libxml\entities.h" />
+    <ClInclude Include="..\..\include\libxml\globals.h" />
+    <ClInclude Include="..\..\include\libxml\hash.h" />
+    <ClInclude Include="..\..\include\libxml\HTMLparser.h" />
+    <ClInclude Include="..\..\include\libxml\HTMLtree.h" />
+    <ClInclude Include="..\..\include\libxml\list.h" />
+    <ClInclude Include="..\..\include\libxml\nanoftp.h" />
+    <ClInclude Include="..\..\include\libxml\nanohttp.h" />
+    <ClInclude Include="..\..\include\libxml\parser.h" />
+    <ClInclude Include="..\..\include\libxml\parserInternals.h" />
+    <ClInclude Include="..\..\include\libxml\pattern.h" />
+    <ClInclude Include="..\..\include\libxml\relaxng.h" />
+    <ClInclude Include="..\..\include\libxml\SAX.h" />
+    <ClInclude Include="..\..\include\libxml\SAX2.h" />
+    <ClInclude Include="..\..\include\libxml\schemasInternals.h" />
+    <ClInclude Include="..\..\include\libxml\schematron.h" />
+    <ClInclude Include="..\..\include\libxml\threads.h" />
+    <ClInclude Include="..\..\include\libxml\tree.h" />
+    <ClInclude Include="..\..\include\libxml\uri.h" />
+    <ClInclude Include="..\..\include\libxml\valid.h" />
+    <ClInclude Include="..\..\include\libxml\xinclude.h" />
+    <ClInclude Include="..\..\include\libxml\xlink.h" />
+    <ClInclude Include="..\..\include\libxml\xmlautomata.h" />
+    <ClInclude Include="..\..\include\libxml\xmlerror.h" />
+    <ClInclude Include="..\..\include\libxml\xmlexports.h" />
+    <ClInclude Include="..\..\include\libxml\xmlIO.h" />
+    <ClInclude Include="..\..\include\libxml\xmlmemory.h" />
+    <ClInclude Include="..\..\include\libxml\xmlmodule.h" />
+    <ClInclude Include="..\..\include\libxml\xmlreader.h" />
+    <ClInclude Include="..\..\include\libxml\xmlregexp.h" />
+    <ClInclude Include="..\..\include\libxml\xmlsave.h" />
+    <ClInclude Include="..\..\include\libxml\xmlschemas.h" />
+    <ClInclude Include="..\..\include\libxml\xmlschemastypes.h" />
+    <ClInclude Include="..\..\include\libxml\xmlstring.h" />
+    <ClInclude Include="..\..\include\libxml\xmlunicode.h" />
+    <ClInclude Include="..\..\include\libxml\xmlversion.h" />
+    <ClInclude Include="..\..\include\libxml\xmlwin32version.h" />
+    <ClInclude Include="..\..\include\libxml\xmlwriter.h" />
+    <ClInclude Include="..\..\include\libxml\xpath.h" />
+    <ClInclude Include="..\..\include\libxml\xpathInternals.h" />
+    <ClInclude Include="..\..\include\libxml\xpointer.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\buf.c" />
+    <ClCompile Include="..\..\c14n.c" />
+    <ClCompile Include="..\..\catalog.c" />
+    <ClCompile Include="..\..\chvalid.c" />
+    <ClCompile Include="..\..\debugXML.c" />
+    <ClCompile Include="..\..\dict.c" />
+    <ClCompile Include="..\..\encoding.c" />
+    <ClCompile Include="..\..\entities.c" />
+    <ClCompile Include="..\..\error.c" />
+    <ClCompile Include="..\..\globals.c" />
+    <ClCompile Include="..\..\hash.c" />
+    <ClCompile Include="..\..\HTMLparser.c" />
+    <ClCompile Include="..\..\HTMLtree.c" />
+    <ClCompile Include="..\..\legacy.c" />
+    <ClCompile Include="..\..\list.c" />
+    <ClCompile Include="..\..\nanoftp.c" />
+    <ClCompile Include="..\..\nanohttp.c" />
+    <ClCompile Include="..\..\parser.c" />
+    <ClCompile Include="..\..\parserInternals.c" />
+    <ClCompile Include="..\..\pattern.c" />
+    <ClCompile Include="..\..\relaxng.c" />
+    <ClCompile Include="..\..\SAX.c" />
+    <ClCompile Include="..\..\SAX2.c" />
+    <ClCompile Include="..\..\schematron.c" />
+    <ClCompile Include="..\..\threads.c" />
+    <ClCompile Include="..\..\tree.c" />
+    <ClCompile Include="..\..\uri.c" />
+    <ClCompile Include="..\..\valid.c" />
+    <ClCompile Include="..\..\xinclude.c" />
+    <ClCompile Include="..\..\xlink.c" />
+    <ClCompile Include="..\..\xmlIO.c" />
+    <ClCompile Include="..\..\xmlmemory.c" />
+    <ClCompile Include="..\..\xmlmodule.c" />
+    <ClCompile Include="..\..\xmlreader.c" />
+    <ClCompile Include="..\..\xmlregexp.c" />
+    <ClCompile Include="..\..\xmlsave.c" />
+    <ClCompile Include="..\..\xmlschemas.c" />
+    <ClCompile Include="..\..\xmlschemastypes.c" />
+    <ClCompile Include="..\..\xmlstring.c" />
+    <ClCompile Include="..\..\xmlunicode.c" />
+    <ClCompile Include="..\..\xmlwriter.c" />
+    <ClCompile Include="..\..\xpath.c" />
+    <ClCompile Include="..\..\xpointer.c" />
+    <ClCompile Include="..\..\xzlib.c" />
+    <ClCompile Include="dllmain.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\include\libxml\xmlversion.h.in" />
+    <None Include="..\..\include\libxml\xmlwin32version.h.in" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

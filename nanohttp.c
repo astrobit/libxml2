@@ -1643,8 +1643,12 @@ xmlNanoHTTPFetch(const char *URL, const char *filename, char **contentType) {
     if (!strcmp(filename, "-"))
         fd = 0;
     else {
-        fd = open(filename, O_CREAT | O_WRONLY, 00644);
-	if (fd < 0) {
+#if _MSC_VER >= 1500 // guess at version
+		fd = _open(filename, O_CREAT | O_WRONLY, 00644);
+#else
+		fd = open(filename, O_CREAT | O_WRONLY, 00644);
+#endif
+		if (fd < 0) {
 	    xmlNanoHTTPClose(ctxt);
 	    if ((contentType != NULL) && (*contentType != NULL)) {
 	        xmlFree(*contentType);
@@ -1656,14 +1660,22 @@ xmlNanoHTTPFetch(const char *URL, const char *filename, char **contentType) {
 
     xmlNanoHTTPFetchContent( ctxt, &buf, &len );
     if ( len > 0 ) {
-	if (write(fd, buf, len) == -1) {
-	    ret = -1;
+#if _MSC_VER >= 1500 // guess at version
+		if (_write(fd, buf, len) == -1) {
+#else
+		if (write(fd, buf, len) == -1) {
+#endif
+			ret = -1;
 	}
     }
 
     xmlNanoHTTPClose(ctxt);
-    close(fd);
-    return(ret);
+#if _MSC_VER >= 1500 // guess at version
+	_close(fd);
+#else
+	close(fd);
+#endif
+	return(ret);
 }
 
 #ifdef LIBXML_OUTPUT_ENABLED
@@ -1689,8 +1701,12 @@ xmlNanoHTTPSave(void *ctxt, const char *filename) {
     if (!strcmp(filename, "-"))
         fd = 0;
     else {
-        fd = open(filename, O_CREAT | O_WRONLY, 0666);
-	if (fd < 0) {
+#if _MSC_VER >= 1500 // guess at version
+		fd = _open(filename, O_CREAT | O_WRONLY, 0666);
+#else
+		fd = open(filename, O_CREAT | O_WRONLY, 0666);
+#endif
+		if (fd < 0) {
 	    xmlNanoHTTPClose(ctxt);
 	    return(-1);
 	}
@@ -1698,14 +1714,22 @@ xmlNanoHTTPSave(void *ctxt, const char *filename) {
 
     xmlNanoHTTPFetchContent( ctxt, &buf, &len );
     if ( len > 0 ) {
-	if (write(fd, buf, len) == -1) {
-	    ret = -1;
+#if _MSC_VER >= 1500 // guess at version
+		if (_write(fd, buf, len) == -1) {
+#else
+		if (write(fd, buf, len) == -1) {
+#endif
+			ret = -1;
 	}
     }
 
     xmlNanoHTTPClose(ctxt);
-    close(fd);
-    return(ret);
+#if _MSC_VER >= 1500 // guess at version
+	_close(fd);
+#else
+	close(fd);
+#endif
+	return(ret);
 }
 #endif /* LIBXML_OUTPUT_ENABLED */
 

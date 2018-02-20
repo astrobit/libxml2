@@ -729,9 +729,12 @@ xmlInputReadCallbackNop(void *context ATTRIBUTE_UNUSED,
 static int
 xmlFdRead (void * context, char * buffer, int len) {
     int ret;
-
-    ret = read((int) (ptrdiff_t) context, &buffer[0], len);
-    if (ret < 0) xmlIOErr(0, "read()");
+#if _MSC_VER >= 1500 // guess at version
+    ret = _read((int) (ptrdiff_t) context, &buffer[0], len);
+#else
+	ret = read((int)(ptrdiff_t)context, &buffer[0], len);
+#endif
+	if (ret < 0) xmlIOErr(0, "read()");
     return(ret);
 }
 
@@ -751,7 +754,12 @@ xmlFdWrite (void * context, const char * buffer, int len) {
     int ret = 0;
 
     if (len > 0) {
-	ret = write((int) (ptrdiff_t) context, &buffer[0], len);
+#if _MSC_VER >= 1500 // guess at version
+		ret = _write((int) (ptrdiff_t) context, &buffer[0], len);
+#else
+		ret = write((int)(ptrdiff_t)context, &buffer[0], len);
+#endif
+
 	if (ret < 0) xmlIOErr(0, "write()");
     }
     return(ret);
@@ -769,7 +777,12 @@ xmlFdWrite (void * context, const char * buffer, int len) {
 static int
 xmlFdClose (void * context) {
     int ret;
-    ret = close((int) (ptrdiff_t) context);
+#if _MSC_VER >= 1500 // guess at version
+	ret = _close((int)(ptrdiff_t)context);
+#else
+	ret = close((int)(ptrdiff_t)context);
+#endif
+	
     if (ret < 0) xmlIOErr(0, "close()");
     return(ret);
 }
@@ -3740,7 +3753,11 @@ xmlParserGetDirectory(const char *filename) {
 	else *cur = 0;
 	ret = xmlMemStrdup(dir);
     } else {
-        if (getcwd(dir, 1024) != NULL) {
+#if _MSC_VER >= 1500 // guess at version
+		if (_getcwd(dir, 1024) != NULL) {
+#else
+		if (getcwd(dir, 1024) != NULL) {
+#endif
 	    dir[1023] = 0;
 	    ret = xmlMemStrdup(dir);
 	}

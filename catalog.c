@@ -981,7 +981,11 @@ xmlLoadFileContent(const char *filename)
 #endif
 
 #ifdef HAVE_STAT
-    if ((fd = open(filename, O_RDONLY)) < 0)
+#if _MSC_VER >= 1500 // guess at version
+	if ((fd = _open(filename, O_RDONLY)) < 0)
+# else
+	if ((fd = open(filename, O_RDONLY)) < 0)
+# endif
 #else
     if ((fd = fopen(filename, "rb")) == NULL)
 #endif
@@ -1000,15 +1004,24 @@ xmlLoadFileContent(const char *filename)
     if (content == NULL) {
         xmlCatalogErrMemory("allocating catalog data");
 #ifdef HAVE_STAT
-	close(fd);
+#if _MSC_VER >= 1500 // guess at version
+		_close(fd);
+# else
+		close(fd);
+# endif
 #else
 	fclose(fd);
 #endif
         return (NULL);
     }
 #ifdef HAVE_STAT
-    len = read(fd, content, size);
-    close(fd);
+#if _MSC_VER >= 1500 // guess at version
+	len = _read(fd, content, size);
+    _close(fd);
+# else
+	len = read(fd, content, size);
+	close(fd);
+# endif
 #else
     len = fread(content, 1, size, fd);
     fclose(fd);
